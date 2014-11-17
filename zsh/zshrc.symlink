@@ -1,6 +1,9 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+# http://superuser.com/questions/232835/open-a-new-tab-in-the-same-directory
+plugins=(osx terminalapp)
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
@@ -38,3 +41,9 @@ do
 done
 
 unset config_files
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Manually added by Alex, to get PostgreSQL to work
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
