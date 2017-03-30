@@ -45,5 +45,11 @@ unset config_files
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Manually added by Alex, to get PostgreSQL to work
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+# Added by Alex
+alias be='bundle exec'
+alias bef='be fastlane'
+alias bep='be pod'
+alias bepi='bep install'
+alias ber='be rubocop -a'
+alias ami='cd ~/Developer/iOS/Amigora'
+alias ddd="echo 'Deleting derived data'; rm -rf ~/Library/Developer/Xcode/DerivedData"
