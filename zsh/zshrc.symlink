@@ -1,14 +1,12 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-# http://superuser.com/questions/232835/open-a-new-tab-in-the-same-directory
-plugins=(osx terminalapp)
-
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
@@ -42,14 +40,11 @@ done
 
 unset config_files
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Added by Alex
-alias be='bundle exec'
-alias bef='be fastlane'
-alias bep='be pod'
-alias bepi='bep install'
-alias ber='be rubocop -a'
-alias ami='cd ~/Developer/iOS/Amigora'
-alias ddd="echo 'Deleting derived data'; rm -rf ~/Library/Developer/Xcode/DerivedData"
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
